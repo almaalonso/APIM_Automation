@@ -9,9 +9,6 @@
       "value": {
         "echoapi": "http://echoapi.cloudapp.net/api"
       }
-    },
-    "NamedValues": {
-      "value": {}
     }
   },
   "resources": []

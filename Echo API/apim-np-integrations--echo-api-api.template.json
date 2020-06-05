@@ -68,7 +68,7 @@
     },
     {
       "properties": {
-        "value": "<policies>\r\n\t<inbound>\r\n\t\t<base />\r\n\t\t<json-to-xml apply=\"always\" consider-accept-header=\"false\" />\r\n\t</inbound>\r\n\t<backend>\r\n\t\t<base />\r\n\t</backend>\r\n\t<outbound>\r\n\t\t<base />\r\n\t</outbound>\r\n</policies>",
+        "value": "<policies>\r\n\t<inbound>\r\n\t\t<base />\r\n\t\t<json-to-xml apply=\"always\" consider-accept-header=\"false\" />\r\n\t\t<cors>\r\n\t\t\t<allowed-origins>\r\n\t\t\t\t<origin>*</origin>\r\n\t\t\t</allowed-origins>\r\n\t\t\t<allowed-methods>\r\n\t\t\t\t<method>GET</method>\r\n\t\t\t\t<method>POST</method>\r\n\t\t\t</allowed-methods>\r\n\t\t</cors>\r\n\t</inbound>\r\n\t<backend>\r\n\t\t<base />\r\n\t</backend>\r\n\t<outbound>\r\n\t\t<base />\r\n\t</outbound>\r\n\t<on-error>\r\n\t\t<base />\r\n\t</on-error>\r\n</policies>",
         "format": "rawxml"
       },
       "name": "[concat(parameters('ApimServiceName'), '/echo-api/create-resource/policy')]",
@@ -107,6 +107,18 @@
     },
     {
       "properties": {
+        "value": "<!--\n    IMPORTANT:\n    - Policy elements can appear only within the <inbound>, <outbound>, <backend> section elements.\n    - To apply a policy to the incoming request (before it is forwarded to the backend service), place a corresponding policy element within the <inbound> section element.\n    - To apply a policy to the outgoing response (before it is sent back to the caller), place a corresponding policy element within the <outbound> section element.\n    - To add a policy, place the cursor at the desired insertion point and select a policy from the sidebar.\n    - To remove a policy, delete the corresponding policy statement from the policy document.\n    - Position the <base> element within a section element to inherit all policies from the corresponding section element in the enclosing scope.\n    - Remove the <base> element to prevent inheriting policies from the corresponding section element in the enclosing scope.\n    - Policies are applied in the order of their appearance, from the top down.\n    - Comments within policy elements are not supported and may disappear. Place your comments between policy elements or at a higher level scope.\n-->\r\n<policies>\r\n\t<inbound>\r\n\t\t<base />\r\n\t\t<cache-lookup vary-by-developer=\"false\" vary-by-developer-groups=\"false\" downstream-caching-type=\"none\" />\r\n\t</inbound>\r\n\t<backend>\r\n\t\t<base />\r\n\t</backend>\r\n\t<outbound>\r\n\t\t<base />\r\n\t\t<cache-store duration=\"3600\" />\r\n\t</outbound>\r\n\t<on-error>\r\n\t\t<base />\r\n\t</on-error>\r\n</policies>",
+        "format": "rawxml"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/echo-api/modify-resource/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
+      "apiVersion": "2019-01-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('ApimServiceName'), 'echo-api', 'modify-resource')]"
+      ]
+    },
+    {
+      "properties": {
         "templateParameters": [],
         "description": "A demonstration of a DELETE call which traditionally deletes the resource. It is based on the same \"echo\" backend as in all other operations so nothing is actually deleted.",
         "request": {
@@ -130,6 +142,18 @@
       "apiVersion": "2019-01-01",
       "dependsOn": [
         "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'echo-api')]"
+      ]
+    },
+    {
+      "properties": {
+        "value": "<!--\n    IMPORTANT:\n    - Policy elements can appear only within the <inbound>, <outbound>, <backend> section elements.\n    - To apply a policy to the incoming request (before it is forwarded to the backend service), place a corresponding policy element within the <inbound> section element.\n    - To apply a policy to the outgoing response (before it is sent back to the caller), place a corresponding policy element within the <outbound> section element.\n    - To add a policy, place the cursor at the desired insertion point and select a policy from the sidebar.\n    - To remove a policy, delete the corresponding policy statement from the policy document.\n    - Position the <base> element within a section element to inherit all policies from the corresponding section element in the enclosing scope.\n    - Remove the <base> element to prevent inheriting policies from the corresponding section element in the enclosing scope.\n    - Policies are applied in the order of their appearance, from the top down.\n    - Comments within policy elements are not supported and may disappear. Place your comments between policy elements or at a higher level scope.\n-->\r\n<policies>\r\n\t<inbound>\r\n\t\t<base />\r\n\t\t<validate-jwt header-name=\"Authorization\" failed-validation-httpcode=\"401\" failed-validation-error-message=\"Server unavailble\" />\r\n\t</inbound>\r\n\t<backend>\r\n\t\t<base />\r\n\t</backend>\r\n\t<outbound>\r\n\t\t<base />\r\n\t</outbound>\r\n\t<on-error>\r\n\t\t<base />\r\n\t</on-error>\r\n</policies>",
+        "format": "rawxml"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/echo-api/remove-resource/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
+      "apiVersion": "2019-01-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('ApimServiceName'), 'echo-api', 'remove-resource')]"
       ]
     },
     {
@@ -161,7 +185,7 @@
     },
     {
       "properties": {
-        "value": "<policies>\r\n\t<inbound>\r\n\t\t<base />\r\n\t</inbound>\r\n\t<backend>\r\n\t\t<base />\r\n\t</backend>\r\n\t<outbound>\r\n\t\t<base />\r\n\t\t<set-header name=\"X-My-Sample\" exists-action=\"override\">\r\n\t\t\t<value>This is a sample</value>\r\n\t\t\t<!-- for multiple headers with the same name add additional value elements -->\r\n\t\t</set-header>\r\n\t\t<jsonp callback-parameter-name=\"ProcessResponse\" />\r\n\t</outbound>\r\n</policies>",
+        "value": "<policies>\r\n\t<inbound>\r\n\t\t<base />\r\n\t\t<set-query-parameter name=\"version\" exists-action=\"override\">\r\n\t\t\t<value>1</value>\r\n\t\t</set-query-parameter>\r\n\t</inbound>\r\n\t<backend>\r\n\t\t<base />\r\n\t</backend>\r\n\t<outbound>\r\n\t\t<base />\r\n\t\t<set-header name=\"X-My-Sample\" exists-action=\"override\">\r\n\t\t\t<value>This is a sample</value>\r\n\t\t</set-header>\r\n\t\t<jsonp callback-parameter-name=\"ProcessResponse\" />\r\n\t</outbound>\r\n\t<on-error>\r\n\t\t<base />\r\n\t</on-error>\r\n</policies>",
         "format": "rawxml"
       },
       "name": "[concat(parameters('ApimServiceName'), '/echo-api/retrieve-header-only/policy')]",
