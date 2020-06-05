@@ -5,5 +5,7 @@
     "fileFolder": "C://Users//ALMAA//Documents//Biztalk//API Management//Apim Automation//Echo API",
     "apiName": "echo-api",
     "paramServiceUrl": "true",
-    "paramNamedValue": "true"
+    "paramNamedValue": "false",
+    "paramApiLoggerId": "true",
+    "paramLogResourceId": "true"
 }
