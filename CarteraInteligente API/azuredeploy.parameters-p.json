@@ -1,0 +1,30 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "service_apim-np-integrations_name": {
+          "value": "apim-p-integrations"
+        },
+        "api_cartera-inteligente-api_name": {
+          "value": "cartera-inteligente-api"
+        },
+        "cartera-inteligente-api_apiRevision": {
+          "value": "1"
+        },
+        "cartera-inteligente-api_serviceUrl": {
+          "value": "https://cartera-inteligente.org"
+        },
+        "cartera-inteligente-api_isCurrent": {
+          "value": true
+        },
+        "product_cartera-inteligente_name": {
+          "value": "cartera-inteligente"
+        },
+        "group_administrators_name": {
+          "value": "administrators"
+        },
+        "group_cartera-inteligente_name": {
+          "value": "cartera-inteligente"
+        }
+      }
+  }

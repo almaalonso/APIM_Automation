@@ -1,14 +1,15 @@
 
 #Get Varables from configuration File
-$PSScriptRoot = $PSScriptRoot + '\configurationFile.json'
-$variablesJsonObject = Get-Content $PSScriptRoot | ConvertFrom-Json
+$configFile = $PSScriptRoot + '\configurationFile.json'
+$variablesObj = Get-Content $configFile | ConvertFrom-Json
 
 #Assign Variable from configuration File
-$kvSecretName = $variablesJsonObject.kvSecretName
-$kvName = $variablesJsonObject.kvName
-$bStorageSuffix = $variablesJsonObject.bStorageSuffix
-$templateFileLocation = $variablesJsonObject.templateFileLocation
-$paratemerFileLocation= $variablesJsonObject.paratemerFileLocation
+$destinationContainer = $variablesObj.downuptemplate.containterurl
+$kvSecretName = $variablesObj.downuptemplate.kvSecretName
+$kvName = $variablesObj.downuptemplate.kvName
+$bStorageSuffix = $variablesObj.deployarmtemplate.bStorageSuffix
+$templateFileLocation = $variablesObj.deployarmtemplate.templateFileLocation
+$paratemerFileLocation= $variablesObj.deployarmtemplate.paratemerFileLocation
 
 
 #Get Azure_Storage_Key from KeyVault
@@ -20,4 +21,4 @@ az storage blob download-batch -d . -s $destinationContainer --pattern $bStorage
 
 
 #deploy the ARM template to the resource group set on the parameters file
-az deployment group create --resource-group $variablesJsonObject.resourceGroup --template-file $templateFileLocation --parameters $paratemerFileLocation
+az deployment group create --resource-group $variablesJsonObject.deployarmtemplate.resourceGroup --template-file $templateFileLocation --parameters $paratemerFileLocation

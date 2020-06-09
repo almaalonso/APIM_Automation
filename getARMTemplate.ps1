@@ -1,14 +1,18 @@
 ﻿
+#Get Varables from configuration File
+$configFile = $PSScriptRoot + '\configurationFile.json'
+$variablesObj = Get-Content $configFile | ConvertFrom-Json
+
 #Set Variables
-$apimName = 'apim-np-integrations'
-$rgName = 'rg-np-integrations'
-$folderName = 'New API'
-$subId = '5de55397-c57a-4202-b7cb-16695807f288'
-$tenant = 'e843640b-4a64-4021-ac40-987b9bd67ca0'
-$apiSuffix = 'newapi'
+$apimName = $variablesObj.createarmtemplate.apimName
+$rgName = $variablesObj.createarmtemplate.rgName
+$folderName = $variablesObj.folderName
+$subId = $variablesObj.createarmtemplate.subId
+$tenant = $variablesObj.createarmtemplate.tenant
+$apiSuffix = $variablesObj.createarmtemplate.apiSuffix
+$resource = $variablesObj.createarmtemplate.resource
 $apiFilters = "path eq '"+ $apiSuffix +"'"
-$filename = 'C:\Users\ALMAA\Documents\Biztalk\API Management\APIm Automation\' +$folderName+'\' +$apimName +"_"+$apiSuffix+'.json'
-$resource = 'https://management.azure.com/'
+$filename = $PSScriptRoot +'\'+$folderName+'\' +$apimName +"_"+$apiSuffix+'.json'
 
 
 #Get access_token from resource and set variable with JSON returned
