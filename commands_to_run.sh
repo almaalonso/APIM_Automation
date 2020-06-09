@@ -1,10 +1,10 @@
 
-#$configurationFile: "C:\Users\ALMAA\Documents\Biztalk\API Management\Apim Automation\extractSettings.json"
-#principal ARM file: "C:\Users\ALMAA\Documents\Biztalk\API Management\Apim Automation\Echo API\apim-np-integrations--echo-api-api.template.json"
-#parameters file: "C:\Users\ALMAA\Documents\Biztalk\API Management\Apim Automation\Echo API\apim-np-integrations-parameters.json"
-#$destinationContainer = "https://apimautomation.blob.core.windows.net/apimautomationcontainer"
-#$sourceFiles =  "C:\Users\ALMAA\Documents\Biztalk\API Management\Apim Automation\New API"
-#$destinationPath = "Get New API"
+$configurationFile: "C:\Users\ALMAA\Documents\Biztalk\API Management\Apim Automation\extractSettings.json"
+principal ARM file: "C:\Users\ALMAA\Documents\Biztalk\API Management\Apim Automation\Echo API\apim-np-integrations--echo-api-api.template.json"
+parameters file: "C:\Users\ALMAA\Documents\Biztalk\API Management\Apim Automation\Echo API\apim-np-integrations-parameters.json"
+$destinationContainer = "https://apimautomation.blob.core.windows.net/apimautomationcontainer"
+$sourceFiles =  "C:\Users\ALMAA\Documents\Biztalk\API Management\Apim Automation\Get New API"
+$destinationPath = "Get New API"
 
 #extract the API definition template (ARM) according with settings in the configuration file
 dotnet run extract --extractorConfig $configurationFile

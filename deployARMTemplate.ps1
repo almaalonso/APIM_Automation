@@ -1,10 +1,14 @@
 
-#Parameters
-$kvSecretName = "blobstoragesecret"
-$kvName = "kvblobstoragekey"
-$bStorageSuffix = "Get New API/*"
-$templateFileLocation = ".\Get New API\apim-np-integrations_newapi.json"
-$paratemerFileLocation=".\Get New API\azureploy.parameters-p.json"
+#Get Varables from configuration File
+$PSScriptRoot = $PSScriptRoot + '\configurationFile.json'
+$variablesJsonObject = Get-Content $PSScriptRoot | ConvertFrom-Json
+
+#Assign Variable from configuration File
+$kvSecretName = $variablesJsonObject.kvSecretName
+$kvName = $variablesJsonObject.kvName
+$bStorageSuffix = $variablesJsonObject.bStorageSuffix
+$templateFileLocation = $variablesJsonObject.templateFileLocation
+$paratemerFileLocation= $variablesJsonObject.paratemerFileLocation
 
 
 #Get Azure_Storage_Key from KeyVault
@@ -16,4 +20,4 @@ az storage blob download-batch -d . -s $destinationContainer --pattern $bStorage
 
 
 #deploy the ARM template to the resource group set on the parameters file
-az deployment group create --resource-group rg-p-integrations --template-file $templateFileLocation --parameters $paratemerFileLocation
+az deployment group create --resource-group $variablesJsonObject.resourceGroup --template-file $templateFileLocation --parameters $paratemerFileLocation

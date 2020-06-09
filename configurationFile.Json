@@ -1,0 +1,8 @@
+{
+    "resourceGroup" :       "rg-np-integrations",
+    "kvSecretName" :        "blobstoragesecret",
+    "kvName" :              "kvblobstoragekey",
+    "bStorageSuffix":       "Get New API/*",
+    "templateFileLocation" : ".//Get New API//azuredeploy.json",
+    "paratemerFileLocation":".//Get New API//azureploy.parameters-np.json"
+}
