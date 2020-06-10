@@ -7,7 +7,7 @@
     },
     "serviceUrl": {
       "value": {
-        "newapi": "http://localhost/revision1/prod"
+        "newapi": "http://localhost/revision1/prod2"
       }
     }
   }
