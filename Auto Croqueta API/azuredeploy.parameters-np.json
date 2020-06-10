@@ -6,13 +6,13 @@
           "value": "apim-np-integrations"
         },
         "api_auto-croqueta_name": {
-          "value": "auto-croqueta"
+          "value": "auto-croqueta-gato"
         },
         "auto-croqueta_apiRevision": {
           "value": "1"
         },
         "auto-croqueta_serviceUrl": {
-          "value": "https://auto-croqueta-test.com"
+          "value": "https://auto-croqueta-gato-test.com"
         },
         "auto-croqueta_isCurrent": {
           "value": true
