@@ -1,11 +1,11 @@
 {
-    "folderName":"CarteraInteligente API",
+    "folderName":"Auto Croqueta API",
     "createarmtemplate": {
         "apimName":"apim-np-integrations",
         "rgName": "rg-np-integrations",
         "subId": "5de55397-c57a-4202-b7cb-16695807f288",
         "tenant": "e843640b-4a64-4021-ac40-987b9bd67ca0",
-        "apiSuffix": "cartera-inteligente",
+        "apiSuffix": "auto-croqueta",
         "resource":"https://management.azure.com/"
     },
     "downuptemplate":{
@@ -17,6 +17,6 @@
         "resourceGroup" :       "rg-p-integrations",
         "bStorageSuffix":       "CarteraInteligente API/*",
         "templateFileLocation" : "C:\\Users\\ALMAA\\Documents\\Biztalk\\API Management\\Apim Automation\\CarteraInteligente API\\azuredeploy.json",
-        "paratemerFileLocation":"C:\\Users\\ALMAA\\Documents\\Biztalk\\API Management\\Apim Automation\\CarteraInteligente API\\azuredeploy.parameters-p.json"
+        "paratemerFileLocation":"C:\\Users\\ALMAA\\Documents\\Biztalk\\API Management\\Apim Automation\\CarteraInteligente API\\deployazure.parameters-p.json"
     }
 }

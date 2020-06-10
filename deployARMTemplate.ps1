@@ -21,4 +21,4 @@ az storage blob download-batch -d . -s $destinationContainer --pattern $bStorage
 
 
 #deploy the ARM template to the resource group set on the parameters file
-az deployment group create --resource-group $variablesJsonObject.deployarmtemplate.resourceGroup --template-file $templateFileLocation --parameters $paratemerFileLocation
+az deployment group create --resource-group $variablesObj.deployarmtemplate.resourceGroup --template-file $templateFileLocation --parameters $paratemerFileLocation
