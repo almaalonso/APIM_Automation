@@ -1,6 +1,6 @@
 
 #Get Varables from configuration File
-$configFile = $PSScriptRoot + '\configurationFile.json'
+$configFile = $PSScriptRoot + '\configurationFile_new.json'
 $variablesObj = Get-Content $configFile | ConvertFrom-Json
 
 #Assign Variable from configuration File

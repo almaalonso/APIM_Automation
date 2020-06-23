@@ -1,0 +1,21 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "service_apim-np-integration_name": {
+          "value": "apim-p-integration"
+        },
+        "api_hub-semtc_name": {
+          "value": "hub-semtc"
+        },
+        "hub-semtc_apiRevision": {
+          "value": "1"
+        },
+        "hub-semtc_serviceUrl": {
+          "value": "https://hub-semtc.com"
+        },
+        "hub-semtc_isCurrent": {
+          "value": true
+        }
+      }
+  }

@@ -1,5 +1,5 @@
 
-$configurationFile: "C:\Users\ALMAA\Documents\Biztalk\API Management\Apim Automation\extractSettings.json"
+$configurationFile = "C:\Users\ALMAA\Documents\Biztalk\API Management\Apim Automation\extractSettings_new.json"
 principal ARM file: "C:\Users\ALMAA\Documents\Biztalk\API Management\Apim Automation\Echo API\apim-np-integrations--echo-api-api.template.json"
 parameters file: "C:\Users\ALMAA\Documents\Biztalk\API Management\Apim Automation\Echo API\apim-np-integrations-parameters.json"
 $destinationContainer = "https://apimautomation.blob.core.windows.net/apimautomationcontainer"
@@ -20,4 +20,4 @@ az storage blob upload-batch -d $destinationContainer -s $sourceFiles --account-
 az storage blob download-batch -d "C:\Users\ALMAA\Documents\Biztalk\API Management\Apim Automation" -s $destinationContainer --pattern "Get New API/*" --account-key $keyVaultSecret.value
 
 #deploy the ARM template to the resource group set on the parameters file
-az deployment group create --resource-group rg-p-integrations --template-file "C:\Users\ALMAA\Documents\Biztalk\API Management\Apim Automation\New API\apim-np-integrations_newapi.json" --parameters "C:\Users\ALMAA\Documents\Biztalk\API Management\Apim Automation\New API\azureploy.parameters-p.json"
+az deployment group create --resource-group rg-p-integrations --template-file ".\CarteraInteligente API\azuredeploy.json" --parameters ".\CarteraInteligente API\deployazure.parameters-p.json"

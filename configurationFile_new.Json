@@ -1,0 +1,22 @@
+{
+    "folderName":"SAP API",
+    "createarmtemplate": {
+        "apimName":"apim-np-integration",
+        "rgName": "rg-np-integrations",
+        "subId": "37933c21-d3be-44d8-9b53-c1d0f17e876e",
+        "tenant": "b6fc13cd-f733-4b97-8cb1-e7b551248079",
+        "apiSuffix": "hub-semtc",
+        "resource":"https://management.azure.com/"
+    },
+    "downuptemplate":{
+        "containterurl" : "https://sanpapim.blob.core.windows.net/containerapim",
+        "kvSecretName": "secretcontainer",
+        "kvName": "kvnpapim"
+    },
+    "deployarmtemplate":{
+        "resourceGroup" :       "rg-p-integrations",
+        "bStorageSuffix":       "SAP API/*",
+        "templateFileLocation" : "C:\\Users\\ALMAA\\Documents\\Biztalk\\API Management\\Apim Automation\\SAP API\\azuredeploy.json",
+        "paratemerFileLocation":"C:\\Users\\ALMAA\\Documents\\Biztalk\\API Management\\Apim Automation\\SAP API\\azuredeploy.parameters-p.json"
+    }
+}

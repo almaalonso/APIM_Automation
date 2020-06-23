@@ -3,11 +3,11 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "ApimServiceName": {
-      "value": "apim-np-integrations"
+      "value": "apim-np-integration"
     },
     "serviceUrl": {
       "value": {
-        "newapi": "http://localhost/revision1"
+        "sappomaster": "https://apim-np-d-idb-integration.iadb.org/api/sap/finance/po-master/GE1"
       }
     }
   }

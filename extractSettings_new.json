@@ -1,0 +1,8 @@
+{
+    "sourceApimName": "apim-np-integration",
+    "destinationApimName": "apim-p-integration",
+    "resourceGroup": "rg-np-integrations",
+    "fileFolder": "C://Users//ALMAA//Documents//Biztalk//API Management//Apim Automation//SAP API",
+    "apiName": "sap-po-master",
+    "paramServiceUrl" : "true"
+}
