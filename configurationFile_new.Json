@@ -1,5 +1,5 @@
 {
-    "folderName":"SAP API",
+    "folderName":"Semantic API",
     "createarmtemplate": {
         "apimName":"apim-np-integration",
         "rgName": "rg-np-integrations",
