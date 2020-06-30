@@ -1,8 +1,0 @@
-{
-    "sourceApimName": "apim-np-integrations",
-    "destinationApimName": "apim-p-integrations",
-    "resourceGroup": "rg-np-integrations",
-    "fileFolder": "C://Users//ALMAA//Documents//Biztalk//API Management//Apim Automation//New API",
-    "apiName": "new-api",
-    "paramServiceUrl" : "true"
-}

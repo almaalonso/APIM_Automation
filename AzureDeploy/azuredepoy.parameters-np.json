@@ -5,10 +5,8 @@
     "ApimServiceName": {
       "value": "apim-np-integration"
     },
-    "serviceUrl": {
-      "value": {
-        "sappomaster": "https://apim-np-d-idb-integration.iadb.org/api/sap/finance/po-master/GE1"
-      }
+    "LinkedTemplatesBaseUrl": {
+      "value": "https://sanpapim.blob.core.windows.net/containerapim/Pet Store API"
     }
   }
 }
