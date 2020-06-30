@@ -6,7 +6,7 @@
       "value": "apim-np-integration"
     },
     "LinkedTemplatesBaseUrl": {
-      "value": "https://sanpapim.blob.core.windows.net/containerapim/Pet Store API"
+      "value": "https://sanpapim.blob.core.windows.net/containerapim/Pet Store API - Extractor"
     },
     "serviceUrl": {
       "value": {
