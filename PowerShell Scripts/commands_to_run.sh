@@ -1,5 +1,5 @@
 
-$configurationFile = "C:\Users\ALMAA\Documents\Biztalk\API Management\Apim Automation\extractSettings_new.json"
+$configurationFile = "C:\Users\ALMAA\Documents\Biztalk\API Management\Apim Automation\Config JSON Files\extractSettings_new.json"
 principal ARM file: "C:\Users\ALMAA\Documents\Biztalk\API Management\Apim Automation\Echo API\apim-np-integrations--echo-api-api.template.json"
 parameters file: "C:\Users\ALMAA\Documents\Biztalk\API Management\Apim Automation\Echo API\apim-np-integrations-parameters.json"
 $destinationContainer = "https://sanpapim.blob.core.windows.net/containerapim"

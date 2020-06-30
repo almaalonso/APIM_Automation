@@ -7,6 +7,11 @@
     },
     "LinkedTemplatesBaseUrl": {
       "value": "https://sanpapim.blob.core.windows.net/containerapim/Pet Store API"
+    },
+    "serviceUrl": {
+      "value": {
+        "myAPI": "http://myApiBackendUrl.com"
+      }
     }
   }
 }
