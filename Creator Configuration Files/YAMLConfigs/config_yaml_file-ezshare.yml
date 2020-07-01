@@ -1,0 +1,72 @@
+version: 0.0.1
+apimServiceName: apim-np-integration
+apiVersionSets:
+    - id: ezshareVersionSetID
+      displayName: swaggerEzshareVersionSetLinked
+      description: a description
+      versioningScheme: Query
+      versionQueryName: versionQuery
+      versionHeaderName: versionHeader
+    - id: secondAPIVersionSetID
+      displayName: secondSet
+      description: another description
+      versioningScheme: Header
+      versionQueryName: versionQuery
+      versionHeaderName: versionHeader
+apis:
+    - name: ezshare
+      type: http
+      description: publicEzshareAPI
+      serviceUrl: http://ezshareBackendUrl.com
+      openApiSpec: C:\Users\ALMAA\Documents\Biztalk\API Management\Apim Automation\Creator Configuration Files\OpenAPISpecs\PublicEzShareAPI.json
+      policy: C:\Users\ALMAA\Documents\Biztalk\API Management\Apim Automation\Creator Configuration Files\XMLPolicies\apiPolicyHeaders.xml
+      suffix: ezshare
+      subscriptionRequired: true
+      isCurrent: true
+      apiVersion: v1
+      apiVersionDescription: My first version
+      apiVersionSetId: ezshareVersionSetID
+      apiRevision: 1
+      apiRevisionDescription: My first revision
+      operations:
+        File_Post:
+          policy: C:\Users\ALMAA\Documents\Biztalk\API Management\Apim Automation\Creator Configuration Files\XMLPolicies\operationRateLimit.xml
+        Folder_Post:
+          policy: C:\Users\ALMAA\Documents\Biztalk\API Management\Apim Automation\Creator Configuration Files\XMLPolicies\operationRateLimit.xml
+      products: starter, platinum
+products:
+    - displayName: platinum
+      description: a test product
+      terms: some terms
+      subscriptionRequired: true
+      approvalRequired: true
+      subscriptionsLimit: 1
+      state: notPublished
+      policy: C:\Users\ALMAA\Documents\Biztalk\API Management\Apim Automation\Creator Configuration Files\XMLPolicies\productSetBodyBasic.xml
+backends:
+    - title: myBackend
+      description: description5308
+      url: https://ezshareproduct/
+      protocol: http
+      credentials:
+        query: 
+          sv: 
+            - xx
+            - bb
+        header: 
+          x-my-1:
+            - val1
+            - val2
+        authorization: 
+          scheme: Basic
+          parameter: opensesma
+      proxy:
+        url: http://192.168.1.1:8080
+        username: almaa
+        password: 1234abcD
+      tls:
+        validateCertificateChain: false
+        validateCertificateName: false
+outputLocation: C:\Users\ALMAA\Documents\Biztalk\API Management\Apim Automation\Public EzShare API
+linked: true
+linkedTemplatesBaseUrl : https://sanpapim.blob.core.windows.net/containerapim/Public EzShare API
