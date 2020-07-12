@@ -1,9 +1,0 @@
-{
-    "sourceApimName": "apim-np-integration",
-    "destinationApimName": "apim-p-integration",
-    "resourceGroup": "rg-np-integrations",
-    "fileFolder": "C://Users//ALMAA//Documents//Biztalk//API Management//Apim Automation//Pet Store API - Extractor",
-    "apiName": "myAPI",
-    "paramServiceUrl" : "true",
-    "linkedTemplatesBaseUrl": "https://sanpapim.blob.core.windows.net/containerapim/Pet Store API"
-}
