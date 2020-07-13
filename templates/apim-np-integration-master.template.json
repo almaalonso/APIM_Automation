@@ -20,7 +20,7 @@
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), 'petstore-api/apim-np-integration-apiVersionSets.template.json')]",
+          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), 'petstore-api/apim-np-integration-master.template.json')]",
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
