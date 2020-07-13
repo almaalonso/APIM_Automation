@@ -1,0 +1,72 @@
+version: 0.0.1
+apimServiceName: apim-np-integration
+apiVersionSets:
+    - id: myAPIVersionSetID
+      displayName: swaggerPetstoreVersionSetLinked
+      description: a description
+      versioningScheme: Query
+      versionQueryName: versionQuery
+      versionHeaderName: versionHeader
+    - id: secondAPIVersionSetID
+      displayName: secondSet
+      description: another description
+      versioningScheme: Header
+      versionQueryName: versionQuery
+      versionHeaderName: versionHeader
+apis:
+    - name: myAPI
+      type: http
+      description: myFirstAPI
+      serviceUrl: http://myApiBackendUrl.com
+      openApiSpec: C:\Users\ALMAA\Documents\Biztalk\API Management\Biztalk Solutions APIM\APIM_Automation\sources\petstore-api\swaggerPetstore.json
+      policy: C:\Users\ALMAA\Documents\Biztalk\API Management\Biztalk Solutions APIM\APIM_Automation\sources\petstore-api\apiPolicyHeaders.xml
+      suffix: petstore-api
+      subscriptionRequired: true
+      isCurrent: true
+      apiVersion: v1
+      apiVersionDescription: My first version
+      apiVersionSetId: myAPIVersionSetID
+      apiRevision: 1
+      apiRevisionDescription: My first revision
+      operations:
+        addPet:
+          policy: C:\Users\ALMAA\Documents\Biztalk\API Management\Biztalk Solutions APIM\APIM_Automation\sources\petstore-api\operationRateLimit.xml
+        deletePet:
+          policy: C:\Users\ALMAA\Documents\Biztalk\API Management\Biztalk Solutions APIM\APIM_Automation\sources\petstore-api\operationRateLimit.xml
+      products: starter, platinum
+products:
+    - displayName: platinum
+      description: a test product
+      terms: some terms
+      subscriptionRequired: true
+      approvalRequired: true
+      subscriptionsLimit: 1
+      state: notPublished
+      policy: C:\Users\ALMAA\Documents\Biztalk\API Management\Biztalk Solutions APIM\APIM_Automation\sources\petstore-api\productSetBodyBasic.xml
+backends:
+    - title: myBackend
+      description: description5308
+      url: https://backendname2644/
+      protocol: http
+      credentials:
+        query: 
+          sv: 
+            - xx
+            - bb
+        header: 
+          x-my-1:
+            - val1
+            - val2
+        authorization: 
+          scheme: Basic
+          parameter: opensesma
+      proxy:
+        url: http://192.168.1.1:8080
+        username: Contoso\admin
+        password: opensesame
+      tls:
+        validateCertificateChain: false
+        validateCertificateName: false
+outputLocation: C:\Users\ALMAA\Documents\Biztalk\API Management\Biztalk Solutions APIM\APIM_Automation\sources\templates\petstore-api
+linked: true
+linkedTemplatesBaseUrl : https://sanpapim.blob.core.windows.net/containerapim

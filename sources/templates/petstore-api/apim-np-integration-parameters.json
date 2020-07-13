@@ -3,10 +3,10 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "ApimServiceName": {
-      "value": "apim-p-integration"
+      "value": "apim-np-integration"
     },
     "LinkedTemplatesBaseUrl": {
-      "value": "https://sanpapim.blob.core.windows.net/containerapim/Public EzShare API"
+      "value": "https://sanpapim.blob.core.windows.net/containerapim"
     }
   }
 }

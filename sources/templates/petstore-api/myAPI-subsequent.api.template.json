@@ -20,7 +20,7 @@
         "subscriptionRequired": true,
         "displayName": "myAPI",
         "serviceUrl": "http://myApiBackendUrl.com",
-        "path": "conf",
+        "path": "petstore-api",
         "protocols": [
           "https"
         ],
