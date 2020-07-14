@@ -31,7 +31,7 @@
       },
       "name": "versionSetTemplate",
       "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2018-01-01",
+      "apiVersion": "2019-10-01",
       "dependsOn": []
     },
     {
@@ -49,7 +49,7 @@
       },
       "name": "productsTemplate",
       "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2018-01-01",
+      "apiVersion": "2019-10-01",
       "dependsOn": []
     },
     {
@@ -67,7 +67,7 @@
       },
       "name": "backendsTemplate",
       "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2018-01-01",
+      "apiVersion": "2019-10-01",
       "dependsOn": []
     },
     {
@@ -85,8 +85,9 @@
       },
       "name": "ezshare-api-InitialAPITemplate",
       "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2018-01-01",
+      "apiVersion": "2019-10-01",
       "dependsOn": [
+        "[resourceId('Microsoft.Resources/deployments', 'versionSetTemplate')]",
         "[resourceId('Microsoft.Resources/deployments', 'productsTemplate')]"
       ]
     },
@@ -105,7 +106,7 @@
       },
       "name": "ezshare-api-SubsequentAPITemplate",
       "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2018-01-01",
+      "apiVersion": "2019-10-01",
       "dependsOn": [
         "[resourceId('Microsoft.Resources/deployments', 'ezshare-api-InitialAPITemplate')]"
       ]
