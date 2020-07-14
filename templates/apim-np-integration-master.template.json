@@ -20,7 +20,7 @@
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/petstore-api/apim-np-integration-master.template.json')]",
+          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/ezshare-api/apim-np-integration-master.template.json')]",
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
@@ -28,11 +28,11 @@
             "value": "[parameters('ApimServiceName')]"
           },
           "LinkedTemplatesBaseUrl":{
-            "value": "[concat(parameters('LinkedTemplatesBaseUrl'), '/petstore-api')]"
+            "value": "[concat(parameters('LinkedTemplatesBaseUrl'), '/ezshare-api')]"
           }
         }
       },
-      "name": "PetStoreAPI-test",
+      "name": "EzShareAPI-test",
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2019-10-01",
       "dependsOn": []
