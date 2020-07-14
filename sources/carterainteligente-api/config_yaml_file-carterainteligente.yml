@@ -20,6 +20,8 @@ apis:
       serviceUrl: http://carteraintelignete-test.org
       openApiSpec: C:\Users\ALMAA\Documents\Biztalk\API Management\Biztalk Solutions APIM\APIM_Automation\sources\carterainteligente-api\cartera-inteligente-swagger.json
       suffix: carteraintelignete-suffixs
+      subscriptionRequired: true
+      isCurrent: true
       apiRevision: 1
       apiRevisionDescription: First Revision
       products: starter
