@@ -10,11 +10,11 @@ apiVersionSets:
     - id: carteraInteligenteVersionSetID
       displayName: Cartera Inteligente API
       description: Cartera Inteligente description
-      versioningScheme: Header
+      versioningScheme: Path
       versionQueryName: versionQuery
       versionHeaderName: versionHeader
 apis:
-    - name: carterainteligente-name
+    - name: Cartera Inteligente API
       type: http
       description: Cartera Inteligente Description
       serviceUrl: http://carteraintelignete-test.org
