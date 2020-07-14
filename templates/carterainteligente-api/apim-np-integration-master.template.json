@@ -20,21 +20,18 @@
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/carterainteligente-api/apim-np-integration-master.template.json')]",
+          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/carterainteligente-name.api.template.json')]",
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
           "ApimServiceName": {
             "value": "[parameters('ApimServiceName')]"
-          },
-          "LinkedTemplatesBaseUrl":{
-            "value": "[concat(parameters('LinkedTemplatesBaseUrl'), '/carterainteligente-api')]"
           }
         }
       },
-      "name": "CarteraInteligente-test",
+      "name": "carterainteligente-name-APITemplate",
       "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2019-10-01",
+      "apiVersion": "2018-01-01",
       "dependsOn": []
     }
   ]
