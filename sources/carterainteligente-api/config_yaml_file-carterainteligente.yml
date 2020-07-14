@@ -1,0 +1,37 @@
+version: 0.0.1
+apimServiceName: apim-np-integration
+#apiVersionSets:
+#    - id: ezshare-api
+#      displayName: swaggerEzshareVersionSetLinked
+#      description: a description
+#      versioningScheme: Query
+#      versionQueryName: versionQuery
+#      versionHeaderName: versionHeader
+#    - id: ezshareVersionSetID
+#      displayName: EzShare API
+#      description: another description
+#      versioningScheme: Header
+#      versionQueryName: versionQuery
+#      versionHeaderName: versionHeader
+apis:
+    - name: carterainteligente-name
+      type: http
+      description: Cartera Inteligente Description
+      serviceUrl: http://carteraintelignete-test.org
+      openApiSpec: C:\Users\ALMAA\Documents\Biztalk\API Management\Biztalk Solutions APIM\APIM_Automation\sources\carterainteligente-api\cartera-inteligente-swagger.json
+      suffix: carteraintelignete-suffixs
+      apiRevision: 1
+      apiRevisionDescription: First Revision
+      products: starter
+#products:
+#    - displayName: ezshare-product
+#      description: a test ezshare product
+#      terms: some terms
+#      subscriptionRequired: true
+#      approvalRequired: true
+#      subscriptionsLimit: 1
+#      state: notPublished
+#      policy: C:\Users\ALMAA\Documents\Biztalk\API Management\Biztalk Solutions APIM\APIM_Automation\sources\ezshare-api\productSetBodyBasic.xml
+outputLocation: C:\Users\ALMAA\Documents\Biztalk\API Management\Biztalk Solutions APIM\APIM_Automation\templates\carteraintelignete-api
+linked: true
+linkedTemplatesBaseUrl : https://sanpapim.blob.core.windows.net/containerapim
