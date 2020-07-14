@@ -24,8 +24,8 @@ apis:
       subscriptionRequired: true
       isCurrent: true
       apiVersion: v1
-      #apiVersionDescription: My first version
-      #apiVersionSetId: ezshareVersionSetID
+      apiVersionDescription: My first version
+      apiVersionSetId: ezshareVersionSetID
       apiRevision: 1
       apiRevisionDescription: My first revision
       operations:
