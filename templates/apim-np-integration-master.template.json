@@ -25,7 +25,7 @@
         },
         "parameters": {
           "ApimServiceName": {
-            "value": "[concat (parameters('ApimServiceName'), '/petstore-api')]"
+            "value": "[concat (parameters('ApimServiceName'), '/petstore-api/apim-np-integration-parameters.json')]"
           }
         }
       },
