@@ -5,7 +5,7 @@
     "ApimServiceName": {
       "type": "string",
       "metadata": {
-        "description": "Name of the API Management"
+        "description": "Name of the API Management Service"
       }
     },
     "LinkedTemplatesBaseUrl": {
