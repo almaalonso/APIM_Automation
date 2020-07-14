@@ -20,7 +20,7 @@
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/carterainteligente-name.api.template.json')]",
+          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/apim-np-integration-apiVersionSets.template.json')]",
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
@@ -29,10 +29,50 @@
           }
         }
       },
-      "name": "carterainteligente-name-APITemplate",
+      "name": "versionSetTemplate",
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2018-01-01",
       "dependsOn": []
+    },
+    {
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/carterainteligente-name-initial.api.template.json')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "ApimServiceName": {
+            "value": "[parameters('ApimServiceName')]"
+          }
+        }
+      },
+      "name": "carterainteligente-name-InitialAPITemplate",
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2018-01-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Resources/deployments', 'versionSetTemplate')]"
+      ]
+    },
+    {
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/carterainteligente-name-subsequent.api.template.json')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "ApimServiceName": {
+            "value": "[parameters('ApimServiceName')]"
+          }
+        }
+      },
+      "name": "carterainteligente-name-SubsequentAPITemplate",
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2018-01-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Resources/deployments', 'carterainteligente-name-InitialAPITemplate')]"
+      ]
     }
   ]
 }
