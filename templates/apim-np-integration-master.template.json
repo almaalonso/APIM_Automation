@@ -20,16 +20,16 @@
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/petstore-api/apim-np-integration-master.template.json')]",
+          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/petstore-api/apim-np-integration-apiVersionSets.template.json')]",
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
           "ApimServiceName": {
-            "value": "[concat (parameters('ApimServiceName'), '/petstore-api/apim-np-integration-parameters.json')]"
+            "value": "[parameters('ApimServiceName')]"
           }
         }
       },
-      "name": "versionSetTemplate",
+      "name": "PetStoreAPI",
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2019-10-01",
       "dependsOn": []
