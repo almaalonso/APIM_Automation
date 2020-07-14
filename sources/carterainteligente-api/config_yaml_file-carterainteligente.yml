@@ -1,18 +1,18 @@
 version: 0.0.1
 apimServiceName: apim-np-integration
-#apiVersionSets:
-#    - id: ezshare-api
-#      displayName: swaggerEzshareVersionSetLinked
-#      description: a description
-#      versioningScheme: Query
-#      versionQueryName: versionQuery
-#      versionHeaderName: versionHeader
-#    - id: ezshareVersionSetID
-#      displayName: EzShare API
-#      description: another description
-#      versioningScheme: Header
-#      versionQueryName: versionQuery
-#      versionHeaderName: versionHeader
+apiVersionSets:
+    - id: ezshare-api
+      displayName: swaggerEzshareVersionSetLinked
+      description: a description
+      versioningScheme: Query
+      versionQueryName: versionQuery
+      versionHeaderName: versionHeader
+    - id: carteraInteligenteVersionSetID
+      displayName: Cartera Inteligente API
+      description: Cartera Inteligente description
+      versioningScheme: Header
+      versionQueryName: versionQuery
+      versionHeaderName: versionHeader
 apis:
     - name: carterainteligente-name
       type: http
@@ -20,6 +20,11 @@ apis:
       serviceUrl: http://carteraintelignete-test.org
       openApiSpec: C:\Users\ALMAA\Documents\Biztalk\API Management\Biztalk Solutions APIM\APIM_Automation\sources\carterainteligente-api\cartera-inteligente-swagger.json
       suffix: carteraintelignete-suffixs
+      subscriptionRequired: true
+      isCurrent: true
+      apiVersion: v1
+      apiVersionDescription: My first version
+      apiVersionSetId: carteraInteligenteVersionSetID
       apiRevision: 1
       apiRevisionDescription: First Revision
       products: starter
@@ -32,6 +37,6 @@ apis:
 #      subscriptionsLimit: 1
 #      state: notPublished
 #      policy: C:\Users\ALMAA\Documents\Biztalk\API Management\Biztalk Solutions APIM\APIM_Automation\sources\ezshare-api\productSetBodyBasic.xml
-outputLocation: C:\Users\ALMAA\Documents\Biztalk\API Management\Biztalk Solutions APIM\APIM_Automation\templates\carteraintelignete-api
+outputLocation: C:\Users\ALMAA\Documents\Biztalk\API Management\Biztalk Solutions APIM\APIM_Automation\templates\carterainteligente-api
 linked: true
 linkedTemplatesBaseUrl : https://sanpapim.blob.core.windows.net/containerapim
