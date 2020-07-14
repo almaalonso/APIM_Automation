@@ -22,7 +22,7 @@
     },
     {
       "properties": {
-        "displayName": "secondSet",
+        "displayName": "EzShare API",
         "description": "another description",
         "versionQueryName": "versionQuery",
         "versionHeaderName": "versionHeader",
