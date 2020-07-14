@@ -8,7 +8,7 @@ apiVersionSets:
       versionQueryName: versionQuery
       versionHeaderName: versionHeader
     - id: ezshareVersionSetID
-      displayName: secondSet
+      displayName: EzShare API
       description: another description
       versioningScheme: Header
       versionQueryName: versionQuery
@@ -43,30 +43,6 @@ products:
       subscriptionsLimit: 1
       state: notPublished
       policy: C:\Users\ALMAA\Documents\Biztalk\API Management\Biztalk Solutions APIM\APIM_Automation\sources\ezshare-api\productSetBodyBasic.xml
-backends:
-    - title: myBackend
-      description: description5308-ezshare
-      url: https://ezshareproduct/
-      protocol: http
-      credentials:
-        query: 
-          sv: 
-            - xx
-            - bb
-        header: 
-          x-my-1:
-            - val1
-            - val2
-        authorization: 
-          scheme: Basic
-          parameter: opensesma
-      proxy:
-        url: http://192.168.1.1:8080
-        username: almaa
-        password: 1234abcD
-      tls:
-        validateCertificateChain: false
-        validateCertificateName: false
 outputLocation: C:\Users\ALMAA\Documents\Biztalk\API Management\Biztalk Solutions APIM\APIM_Automation\templates\ezshare-api
 linked: true
 linkedTemplatesBaseUrl : https://sanpapim.blob.core.windows.net/containerapim

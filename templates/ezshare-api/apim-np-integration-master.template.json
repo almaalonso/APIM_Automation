@@ -56,24 +56,6 @@
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/apim-np-integration-backends.template.json')]",
-          "contentVersion": "1.0.0.0"
-        },
-        "parameters": {
-          "ApimServiceName": {
-            "value": "[parameters('ApimServiceName')]"
-          }
-        }
-      },
-      "name": "backendsTemplate",
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2019-10-01",
-      "dependsOn": []
-    },
-    {
-      "properties": {
-        "mode": "Incremental",
-        "templateLink": {
           "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/ezshare-api-initial.api.template.json')]",
           "contentVersion": "1.0.0.0"
         },
