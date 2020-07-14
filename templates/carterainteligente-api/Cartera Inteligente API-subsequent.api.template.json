@@ -1,0 +1,44 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "ApimServiceName": {
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "properties": {
+        "description": "Cartera Inteligente Description",
+        "type": "http",
+        "apiRevision": "1",
+        "apiVersion": "v1",
+        "isCurrent": true,
+        "apiRevisionDescription": "First Revision",
+        "apiVersionDescription": "My first version",
+        "apiVersionSetId": "[resourceId('Microsoft.ApiManagement/service/apiVersionSets', parameters('ApimServiceName'), 'carteraInteligenteVersionSetID')]",
+        "subscriptionRequired": true,
+        "displayName": "Cartera Inteligente API",
+        "serviceUrl": "http://carteraintelignete-test.org",
+        "path": "carteraintelignete-suffixs",
+        "protocols": [
+          "https"
+        ],
+        "apiType": "http"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/Cartera Inteligente API')]",
+      "type": "Microsoft.ApiManagement/service/apis",
+      "apiVersion": "2019-01-01",
+      "dependsOn": []
+    },
+    {
+      "properties": {},
+      "name": "[concat(parameters('ApimServiceName'), '/starter/Cartera Inteligente API')]",
+      "type": "Microsoft.ApiManagement/service/products/apis",
+      "apiVersion": "2019-01-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'Cartera Inteligente API')]"
+      ]
+    }
+  ]
+}
