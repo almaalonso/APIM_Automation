@@ -9,13 +9,13 @@
   "resources": [
     {
       "properties": {
-        "displayName": "swaggerEzshareVersionSetLinked",
+        "displayName": "swaggerCarteraVersionSetLinked",
         "description": "a description",
         "versionQueryName": "versionQuery",
         "versionHeaderName": "versionHeader",
         "versioningScheme": "Query"
       },
-      "name": "[concat(parameters('ApimServiceName'), '/ezshare-api')]",
+      "name": "[concat(parameters('ApimServiceName'), '/carterainteligente-api')]",
       "type": "Microsoft.ApiManagement/service/apiVersionSets",
       "apiVersion": "2019-01-01",
       "dependsOn": []

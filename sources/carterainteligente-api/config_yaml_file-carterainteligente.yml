@@ -1,8 +1,8 @@
 version: 0.0.1
 apimServiceName: apim-np-integration
 apiVersionSets:
-    - id: ezshare-api
-      displayName: swaggerEzshareVersionSetLinked
+    - id: carterainteligente-api
+      displayName: swaggerCarteraVersionSetLinked
       description: a description
       versioningScheme: Query
       versionQueryName: versionQuery
