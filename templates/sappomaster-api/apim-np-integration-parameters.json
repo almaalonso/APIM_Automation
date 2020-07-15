@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "ApimServiceName": {
-      "value": "apim-np-integration"
+      "value": "apim-p-integration"
     },
     "LinkedTemplatesBaseUrl": {
       "value": "https://sanpapim.blob.core.windows.net/containerapim"

@@ -1,0 +1,86 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "ApimServiceName": {
+      "type": "string",
+      "metadata": {
+        "description": "Name of the API Management"
+      }
+    },
+    "LinkedTemplatesBaseUrl": {
+      "type": "string",
+      "metadata": {
+        "description": "Base URL of the repository that contains the generated templates"
+      }
+    },
+    "serviceUrl": {
+      "type": "object",
+      "metadata": {
+        "description": "Service url for each Api"
+      }
+    }
+  },
+  "resources": [
+    {
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/apim-np-integration-globalServicePolicy.template.json')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "ApimServiceName": {
+            "value": "[parameters('ApimServiceName')]"
+          }
+        }
+      },
+      "name": "globalServicePolicyTemplate",
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2018-01-01",
+      "dependsOn": []
+    },
+    {
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/apim-np-integration-backends.template.json')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "ApimServiceName": {
+            "value": "[parameters('ApimServiceName')]"
+          }
+        }
+      },
+      "name": "backendsTemplate",
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2018-01-01",
+      "dependsOn": []
+    },
+    {
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/apim-np-integration--sap-po-master-api.template.json')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "ApimServiceName": {
+            "value": "[parameters('ApimServiceName')]"
+          },
+          "serviceUrl": {
+            "value": "[parameters('serviceUrl')]"
+          }
+        }
+      },
+      "name": "apisTemplate",
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2018-01-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Resources/deployments', 'globalServicePolicyTemplate')]",
+        "[resourceId('Microsoft.Resources/deployments', 'backendsTemplate')]"
+      ]
+    }
+  ]
+}
