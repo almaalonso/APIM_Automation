@@ -25,7 +25,8 @@
         },
         "parameters": {
           "ApimServiceName": {
-            "value": "[parameters('ApimServiceName')]"
+            //"value": "[parameters('ApimServiceName')]"
+            "value": "[concat(parameters('ApimServiceName'), '/sappomaster-api')]"
           },
           "LinkedTemplatesBaseUrl":{
             "value": "[concat(parameters('LinkedTemplatesBaseUrl'), '/sappomaster-api')]"
