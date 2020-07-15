@@ -1,0 +1,389 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "ApimServiceName": {
+      "type": "string"
+    },
+    "serviceUrl": {
+      "type": "object"
+    }
+  },
+  "resources": [
+    {
+      "properties": {
+        "authenticationSettings": {
+          "subscriptionKeyRequired": false
+        },
+        "subscriptionKeyParameterNames": {
+          "header": "Ocp-Apim-Subscription-Key",
+          "query": "subscription-key"
+        },
+        "apiRevision": "1",
+        "isCurrent": true,
+        "subscriptionRequired": true,
+        "displayName": "SAP PO Master",
+        "serviceUrl": "[parameters('serviceUrl').sappomaster]",
+        "path": "pomaster",
+        "protocols": [
+          "https"
+        ]
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/sap-po-master')]",
+      "type": "Microsoft.ApiManagement/service/apis",
+      "apiVersion": "2019-01-01",
+      "dependsOn": []
+    },
+    {
+      "properties": {
+        "contentType": "application/vnd.oai.openapi.components+json",
+        "document": {
+          "components": {
+            "schemas": {
+              "poMasterRequest": {
+                "type": "object",
+                "properties": {
+                  "poMasterRequest": {
+                    "type": "object",
+                    "properties": {
+                      "lineItem": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "purchasingDocNum": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      },
+                      "user": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "poMasterRequest": {
+                    "lineItem": [
+                      {
+                        "purchasingDocNum": "sample"
+                      }
+                    ]
+                  }
+                }
+              },
+              "poMasterResponse": {
+                "type": "object",
+                "properties": {
+                  "poMasterResponse": {
+                    "type": "object",
+                    "properties": {
+                      "pOTotals": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "purchasingDocNum": {
+                              "type": "string"
+                            },
+                            "pOTotalValue": {
+                              "type": "number"
+                            },
+                            "pOLineItems": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "pONumber": {
+                                    "type": "string"
+                                  },
+                                  "pOStatus": {
+                                    "type": "string"
+                                  },
+                                  "pOType": {
+                                    "type": "string"
+                                  },
+                                  "purchasingGroup": {
+                                    "type": "string"
+                                  },
+                                  "pOBuyer": {
+                                    "type": "string"
+                                  },
+                                  "pOCurrency": {
+                                    "type": "string"
+                                  },
+                                  "pOLocalCurrency_US": {
+                                    "type": "string"
+                                  },
+                                  "exchangeRate": {
+                                    "type": "number"
+                                  },
+                                  "pOItem": {
+                                    "type": "string"
+                                  },
+                                  "pOItemType": {
+                                    "type": "string"
+                                  },
+                                  "pOItemValue": {
+                                    "type": "number"
+                                  },
+                                  "pOItemValueUSD": {
+                                    "type": "number"
+                                  },
+                                  "pOOpenValue": {
+                                    "type": "number"
+                                  },
+                                  "pOOpenValueUSD": {
+                                    "type": "number"
+                                  },
+                                  "purchaseType": {
+                                    "type": "string"
+                                  },
+                                  "purchaseTypeSource": {
+                                    "type": "string"
+                                  },
+                                  "packageNumber": {
+                                    "type": "string"
+                                  },
+                                  "limitsInternalLineNumber": {
+                                    "type": "string"
+                                  },
+                                  "earmarkedFundsDocNum": {
+                                    "type": "string"
+                                  },
+                                  "earmarkedFundsDocItem": {
+                                    "type": "string"
+                                  },
+                                  "categoryId": {
+                                    "type": "string"
+                                  },
+                                  "categoryDesc": {
+                                    "type": "string"
+                                  },
+                                  "pOBundgetYear": {
+                                    "type": "string"
+                                  },
+                                  "pOFMPostingDate": {
+                                    "type": "string"
+                                  },
+                                  "pODeliveryDate": {
+                                    "type": "string"
+                                  },
+                                  "pOQuantity": {
+                                    "type": "number"
+                                  },
+                                  "pOMeasureUnits": {
+                                    "type": "string"
+                                  },
+                                  "pOToECCFromSRM": {
+                                    "type": "string"
+                                  },
+                                  "openQuantity": {
+                                    "type": "string"
+                                  },
+                                  "receiptDocNum": {
+                                    "type": "string"
+                                  },
+                                  "eCCGoodsReceiptCreator": {
+                                    "type": "string"
+                                  },
+                                  "goodsReceived": {
+                                    "type": "string"
+                                  },
+                                  "eCCReceiptUSDValue": {
+                                    "type": "number"
+                                  },
+                                  "eCCReceiptCurrency": {
+                                    "type": "string"
+                                  },
+                                  "eCCReceiptStatus": {
+                                    "type": "string"
+                                  },
+                                  "eCCReceiptDate": {
+                                    "type": "string"
+                                  },
+                                  "pOItemValueNew": {
+                                    "type": "string"
+                                  },
+                                  "pOItemValueTransfer": {
+                                    "type": "string"
+                                  },
+                                  "pODate": {
+                                    "type": "string"
+                                  },
+                                  "costCenter": {
+                                    "type": "string"
+                                  },
+                                  "wBSElement": {
+                                    "type": "string"
+                                  },
+                                  "operationNumber": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "errorMessages": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string"
+                            },
+                            "id": {
+                              "type": "string"
+                            },
+                            "number": {
+                              "type": "string"
+                            },
+                            "message": {
+                              "type": "string"
+                            },
+                            "logNumber": {
+                              "type": "string"
+                            },
+                            "logMessageNumber": {
+                              "type": "string"
+                            },
+                            "message1": {
+                              "type": "string"
+                            },
+                            "message2": {
+                              "type": "string"
+                            },
+                            "message3": {
+                              "type": "string"
+                            },
+                            "message4": {
+                              "type": "string"
+                            },
+                            "parameter": {
+                              "type": "string"
+                            },
+                            "row": {
+                              "type": "number"
+                            },
+                            "field": {
+                              "type": "string"
+                            },
+                            "system": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/sap-po-master/5ee82ff087e73212f0220600')]",
+      "type": "Microsoft.ApiManagement/service/apis/schemas",
+      "apiVersion": "2019-01-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'sap-po-master')]"
+      ]
+    },
+    {
+      "properties": {
+        "templateParameters": [],
+        "description": "Get Po Master Data",
+        "request": {
+          "description": "Get Po Master Data Request",
+          "queryParameters": [],
+          "headers": [],
+          "representations": [
+            {
+              "contentType": "application/json",
+              "sample": "{\n  \"poMasterRequest\": {\n    \"lineItem\": [\n      {\n        \"purchasingDocNum\": \"sample\"\n      }\n    ]\n  }\n}",
+              "schemaId": "5ee82ff087e73212f0220600",
+              "typeName": "poMasterRequest"
+            },
+            {
+              "contentType": "application/xml",
+              "sample": "<poMasterRequest>\r\n      <lineItem>\r\n         <element>\r\n            <purchasingDocNum>string</purchasingDocNum>\r\n         </element>\r\n      </lineItem>\r\n   </poMasterRequest>",
+              "schemaId": "5ee82ff087e73212f0220600",
+              "typeName": "poMasterRequest"
+            }
+          ]
+        },
+        "responses": [
+          {
+            "statusCode": 200,
+            "description": "Get PO Master Data Response",
+            "headers": [],
+            "representations": [
+              {
+                "contentType": "application/json",
+                "sample": "{\n  \"poMasterResponse\": {\n    \"pOTotals\": [\n      {\n        \"purchasingDocNum\": \"sample\",\n        \"pOTotalValue\": 1,\n        \"pOLineItems\": [\n          {\n            \"pONumber\": \"sample\",\n            \"pOStatus\": \"sample\",\n            \"pOType\": \"sample\",\n            \"purchasingGroup\": \"sample\",\n            \"pOBuyer\": \"sample\",\n            \"pOCurrency\": \"sample\",\n            \"pOLocalCurrency_US\": \"sample\",\n            \"exchangeRate\": 1,\n            \"pOItem\": \"sample\",\n            \"pOItemType\": \"sample\",\n            \"pOItemValue\": 1,\n            \"pOItemValueUSD\": 1,\n            \"pOOpenValue\": 1,\n            \"pOOpenValueUSD\": 1,\n            \"purchaseType\": \"sample\",\n            \"purchaseTypeSource\": \"sample\",\n            \"packageNumber\": \"sample\",\n            \"limitsInternalLineNumber\": \"sample\",\n            \"earmarkedFundsDocNum\": \"sample\",\n            \"earmarkedFundsDocItem\": \"sample\",\n            \"categoryId\": \"sample\",\n            \"categoryDesc\": \"sample\",\n            \"pOBundgetYear\": \"sample\",\n            \"pOFMPostingDate\": \"sample\",\n            \"pODeliveryDate\": \"sample\",\n            \"pOQuantity\": 1,\n            \"pOMeasureUnits\": \"sample\",\n            \"pOToECCFromSRM\": \"sample\",\n            \"openQuantity\": \"sample\",\n            \"receiptDocNum\": \"sample\",\n            \"eCCGoodsReceiptCreator\": \"sample\",\n            \"goodsReceived\": \"sample\",\n            \"eCCReceiptUSDValue\": 1,\n            \"eCCReceiptCurrency\": \"sample\",\n            \"eCCReceiptStatus\": \"sample\",\n            \"eCCReceiptDate\": \"sample\",\n            \"pOItemValueNew\": \"sample\",\n            \"pOItemValueTransfer\": \"sample\",\n            \"pODate\": \"sample\",\n            \"costCenter\": \"sample\",\n            \"wBSElement\": \"sample\",\n            \"operationNumber\": \"sample\"\n          }\n        ]\n      }\n    ],\n    \"errorMessages\": [\n      {\n        \"type\": \"sample\",\n        \"id\": \"sample\",\n        \"number\": \"sample\",\n        \"message\": \"sample\",\n        \"logNumber\": \"sample\",\n        \"logMessageNumber\": \"sample\",\n        \"message1\": \"sample\",\n        \"message2\": \"sample\",\n        \"message3\": \"sample\",\n        \"message4\": \"sample\",\n        \"parameter\": \"sample\",\n        \"row\": 1,\n        \"field\": \"sample\",\n        \"system\": \"sample\"\n      }\n    ]\n  }\n}",
+                "schemaId": "5ee82ff087e73212f0220600",
+                "typeName": "poMasterResponse"
+              },
+              {
+                "contentType": "application/xml",
+                "sample": "<poMasterResponse>\r\n      <pOTotals>\r\n         <element>\r\n            <pOLineItems>\r\n               <element>\r\n                  <categoryDesc>string</categoryDesc>\r\n                  <categoryId>string</categoryId>\r\n                  <costCenter>string</costCenter>\r\n                  <eCCGoodsReceiptCreator>string</eCCGoodsReceiptCreator>\r\n                  <eCCReceiptCurrency>string</eCCReceiptCurrency>\r\n                  <eCCReceiptDate>string</eCCReceiptDate>\r\n                  <eCCReceiptStatus>string</eCCReceiptStatus>\r\n                  <eCCReceiptUSDValue>1</eCCReceiptUSDValue>\r\n                  <earmarkedFundsDocItem>string</earmarkedFundsDocItem>\r\n                  <earmarkedFundsDocNum>string</earmarkedFundsDocNum>\r\n                  <exchangeRate>1</exchangeRate>\r\n                  <goodsReceived>string</goodsReceived>\r\n                  <limitsInternalLineNumber>string</limitsInternalLineNumber>\r\n                  <openQuantity>string</openQuantity>\r\n                  <operationNumber>string</operationNumber>\r\n                  <pOBundgetYear>string</pOBundgetYear>\r\n                  <pOBuyer>string</pOBuyer>\r\n                  <pOCurrency>string</pOCurrency>\r\n                  <pODate>string</pODate>\r\n                  <pODeliveryDate>string</pODeliveryDate>\r\n                  <pOFMPostingDate>string</pOFMPostingDate>\r\n                  <pOItem>string</pOItem>\r\n                  <pOItemType>string</pOItemType>\r\n                  <pOItemValue>1</pOItemValue>\r\n                  <pOItemValueNew>string</pOItemValueNew>\r\n                  <pOItemValueTransfer>string</pOItemValueTransfer>\r\n                  <pOItemValueUSD>1</pOItemValueUSD>\r\n                  <pOLocalCurrency_US>string</pOLocalCurrency_US>\r\n                  <pOMeasureUnits>string</pOMeasureUnits>\r\n                  <pONumber>string</pONumber>\r\n                  <pOOpenValue>1</pOOpenValue>\r\n                  <pOOpenValueUSD>1</pOOpenValueUSD>\r\n                  <pOQuantity>1</pOQuantity>\r\n                  <pOStatus>string</pOStatus>\r\n                  <pOToECCFromSRM>string</pOToECCFromSRM>\r\n                  <pOType>string</pOType>\r\n                  <packageNumber>string</packageNumber>\r\n                  <purchaseType>string</purchaseType>\r\n                  <purchaseTypeSource>string</purchaseTypeSource>\r\n                  <purchasingGroup>string</purchasingGroup>\r\n                  <receiptDocNum>string</receiptDocNum>\r\n                  <wBSElement>string</wBSElement>\r\n               </element>\r\n            </pOLineItems>\r\n            <pOTotalValue>1</pOTotalValue>\r\n            <purchasingDocNum>string</purchasingDocNum>\r\n         </element>\r\n      </pOTotals>\r\n\t  <errorMessages>\r\n         <element>\r\n            <field>string</field>\r\n            <id>string</id>\r\n            <logMessageNumber>string</logMessageNumber>\r\n            <logNumber>string</logNumber>\r\n            <message>string</message>\r\n            <message1>string</message1>\r\n            <message2>string</message2>\r\n            <message3>string</message3>\r\n            <message4>string</message4>\r\n            <number>string</number>\r\n            <parameter>string</parameter>\r\n            <row>1</row>\r\n            <system>string</system>\r\n            <type>string</type>\r\n         </element>\r\n      </errorMessages>\r\n   </poMasterResponse>",
+                "schemaId": "5ee82ff087e73212f0220600",
+                "typeName": "poMasterResponse"
+              }
+            ]
+          },
+          {
+            "statusCode": 401,
+            "description": "",
+            "headers": [],
+            "representations": []
+          },
+          {
+            "statusCode": 404,
+            "description": "",
+            "headers": [],
+            "representations": []
+          },
+          {
+            "statusCode": 405,
+            "description": "",
+            "headers": [],
+            "representations": [
+              {
+                "contentType": "application/json",
+                "sample": "{\n  \"statusCode\": 405,\n  \"message\": \"Method not allowed. Only supports POST\"\n}",
+                "schemaId": "5ee82ff087e73212f0220600",
+                "typeName": "poMasterResponse"
+              }
+            ]
+          }
+        ],
+        "displayName": "Get PO Master Data",
+        "method": "POST",
+        "urlTemplate": "/get-po-master"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/sap-po-master/5e67c3da1ed6210a2cda6e61')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "apiVersion": "2019-01-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'sap-po-master')]",
+        "[resourceId('Microsoft.ApiManagement/service/apis/schemas', parameters('ApimServiceName'), 'sap-po-master', '5ee82ff087e73212f0220600')]"
+      ]
+    },
+    {
+      "properties": {
+        "value": "<!--\n    IMPORTANT:\n    - Policy elements can appear only within the <inbound>, <outbound>, <backend> section elements.\n    - To apply a policy to the incoming request (before it is forwarded to the backend service), place a corresponding policy element within the <inbound> section element.\n    - To apply a policy to the outgoing response (before it is sent back to the caller), place a corresponding policy element within the <outbound> section element.\n    - To add a policy, place the cursor at the desired insertion point and select a policy from the sidebar.\n    - To remove a policy, delete the corresponding policy statement from the policy document.\n    - Position the <base> element within a section element to inherit all policies from the corresponding section element in the enclosing scope.\n    - Remove the <base> element to prevent inheriting policies from the corresponding section element in the enclosing scope.\n    - Policies are applied in the order of their appearance, from the top down.\n    - Comments within policy elements are not supported and may disappear. Place your comments between policy elements or at a higher level scope.\n-->\r\n<policies>\r\n\t<inbound>\r\n\t\t<base />\r\n\t\t<cors>\r\n\t\t\t<allowed-origins>\r\n\t\t\t\t<origin>*</origin>\r\n\t\t\t</allowed-origins>\r\n\t\t\t<allowed-methods>\r\n\t\t\t\t<method>GET</method>\r\n\t\t\t\t<method>POST</method>\r\n\t\t\t</allowed-methods>\r\n\t\t</cors>\r\n\t\t<cache-lookup vary-by-developer=\"false\" vary-by-developer-groups=\"false\" downstream-caching-type=\"none\" />\r\n\t</inbound>\r\n\t<backend>\r\n\t\t<base />\r\n\t</backend>\r\n\t<outbound>\r\n\t\t<base />\r\n\t\t<cache-store duration=\"3600\" />\r\n\t</outbound>\r\n\t<on-error>\r\n\t\t<base />\r\n\t</on-error>\r\n</policies>",
+        "format": "rawxml"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/sap-po-master/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/policies",
+      "apiVersion": "2019-01-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'sap-po-master')]"
+      ]
+    }
+  ]
+}
