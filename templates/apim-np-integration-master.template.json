@@ -13,12 +13,6 @@
       "metadata": {
         "description": "Base URL of the repository"
       }
-    },
-    "serviceUrl": {
-      "type": "object",
-      "metadata": {
-        "description": "Service url for each Api"
-      }
     }
   },
   "resources": [
@@ -26,20 +20,19 @@
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/sappomaster-api/apim-np-integration-master.template.json')]",
+          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/petstore-api/apim-np-integration-master.template.json')]",
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
           "ApimServiceName": {
-            //"value": "[parameters('ApimServiceName')]"
             "value": "[parameters('ApimServiceName')]"
           },
           "LinkedTemplatesBaseUrl":{
-            "value": "[concat(parameters('LinkedTemplatesBaseUrl'), '/sappomaster-api')]"
+            "value": "[concat(parameters('LinkedTemplatesBaseUrl'), '/petstore-api')]"
           }
         }
       },
-      "name": "CarteraInteligente-test",
+      "name": "PetStore API Deployment",
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2019-10-01",
       "dependsOn": []

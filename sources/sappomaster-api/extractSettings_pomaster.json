@@ -1,9 +1,0 @@
-{
-    "sourceApimName": "apim-np-integration",
-    "destinationApimName": "apim-p-integration",
-    "resourceGroup": "rg-np-integrations",
-    "fileFolder": "C://Users//ALMAA//Documents//Biztalk//API Management//Biztalk Solutions APIM//APIM_Automation//sources//sappomaster-api",
-    "apiName": "sap-po-master",
-    "paramServiceUrl" : "true",
-    "linkedTemplatesBaseUrl": "https://sanpapim.blob.core.windows.net/containerapim"
-}
