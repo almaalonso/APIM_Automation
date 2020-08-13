@@ -1,0 +1,37 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "ApimServiceName": {
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "properties": {
+        "displayName": "Ezshare API",
+        "description": "Ezshare API Descriptio Test",
+        "versionQueryName": "versionQuery",
+        "versionHeaderName": "versionHeader",
+        "versioningScheme": "Segment"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/segmentVersionID')]",
+      "type": "Microsoft.ApiManagement/service/apiVersionSets",
+      "apiVersion": "2019-01-01",
+      "dependsOn": []
+    },
+    {
+      "properties": {
+        "displayName": "Ezshare API",
+        "description": "Ezshare API Descriptio Test",
+        "versionQueryName": "versionQuery",
+        "versionHeaderName": "versionHeader",
+        "versioningScheme": "Header"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/headerVersionSegment')]",
+      "type": "Microsoft.ApiManagement/service/apiVersionSets",
+      "apiVersion": "2019-01-01",
+      "dependsOn": []
+    }
+  ]
+}

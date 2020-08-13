@@ -1,0 +1,134 @@
+version: 0.0.1
+apimServiceName: apim-np-integrations
+apiVersionSets:
+    - id: segmentVersionID
+      displayName: Ezshare API
+      description: Ezshare API Descriptio Test
+      versioningScheme: Segment
+      versionQueryName: versionQuery
+      versionHeaderName: versionHeader
+    - id: headerVersionSegment
+      displayName: Ezshare API
+      description: Ezshare API Descriptio Test
+      versioningScheme: Header
+      versionQueryName: versionQuery
+      versionHeaderName: versionHeader
+apis:
+    - name: ezshare-api
+      type: http
+      description: Public Ezshare API
+      serviceUrl: http://ezshare-api-test.iadb.org
+      openApiSpec: C:\Users\ALMAA\OneDrive - Inter-American Development Bank Group\Documents\Biztalk\API Management\CICD APIM\APIM_Automation\sources\ezshare-api\PublicEzShareAPI.json
+      #policy: C:\Users\myUsername\Projects\azure-api-management-devops-example\src\APIM_ARMTemplate\apimtemplate\Creator\ExampleFiles\XMLPolicies\apiPolicyHeaders.xml
+      suffix: ezshare-api
+      subscriptionRequired: true
+      isCurrent: true
+      apiVersion: v1
+      apiVersionDescription: Version 1
+      apiVersionSetId: segmentVersionID
+      apiRevision: 1
+      apiRevisionDescription: Revision 1
+      #operations:      
+      #  addPet:
+      #    policy: C:\Users\myUsername\Projects\azure-api-management-devops-example\src\APIM_ARMTemplate\apimtemplate\Creator\ExampleFile\XMLPolicies\operationRateLimit.xml
+      #  deletePet:
+      #    policy: C:\Users\myUsername\Projects\azure-api-management-devops-example\src\APIM_ARMTemplate\apimtemplate\Creator\ExampleFile\XMLPolicies\operationRateLimit.xml
+      products: ezshare
+      #products: starter, platinum
+      #authenticationSettings:
+      #  oAuth2:
+      #      authorizationServerId: myAuthServer
+      #      scope: myScope
+      #diagnostic:
+      #  name: applicationinsights
+      #  alwaysLog: allErrors
+      #  loggerId: myAppInsights
+      #  sampling:
+      #    samplingType: fixed
+      #    percentage: 50
+      #  frontend: 
+      #    request:
+      #      headers:
+      #      body: 
+      #        bytes: 512
+      #    response: 
+      #      headers:
+      #      body: 
+      #        bytes: 512
+      #  backend: 
+      #    request:
+      #      headers:
+      #      body: 
+      #        bytes: 512
+      #    response: 
+      #      headers:
+      #      body: 
+      #        bytes: 512
+      #  enableHttpCorrelationHeaders: true
+products:
+    - displayName: ezshare
+      description: ezshare product
+      terms: some terms
+      subscriptionRequired: true
+      approvalRequired: true
+      subscriptionsLimit: 10
+      state: notPublished
+#      policy: C:\Users\ALMAA\OneDrive - Inter-American Development Bank Group\Documents\Biztalk\API Management\CICD APIM\apim-np-automation-dev\sources\ezshare-api\operationRateLimit.xml
+#namedValues:
+#    - displayName: Test
+#      value: Item 1
+#    - displayname: Test2
+#      value: Item 2
+#loggers:
+#    - name: myAppInsights
+#      loggerType: applicationInsights
+#      description: a test app insights
+#      credentials:
+#        instrumentationKey: 45d4v88-fdfs-4b35-9232-731d82d4d1c6
+#      isBuffered: true
+#authorizationServers:
+#    - displayName: myAuthServer
+#      description: test server
+#      clientRegistrationEndpoint: https://www.contoso.com/apps
+#      authorizationEndpoint: https://www.contoso.com/oauth2/auth
+#      authorizationMethods:
+#        - GET
+#     tokenEndpoint: https://www.contoso.com/oauth2/token
+#      supportState: true
+#      defaultScope: read write
+#      grantTypes:
+#        - authorizationCode
+#        - implicit
+#      bearerTokenSendingMethods:
+#        - authorizationHeader
+#      clientId: 1
+#      clientSecret: 2
+#      resourceOwnerUsername: un
+#      resourceOwnerPassword: pwd
+#backends:
+#    - title: myBackend
+#      description: description5308
+#      url: https://backendname2644/
+#      protocol: http
+#      credentials:
+#        query: 
+#          sv: 
+#            - xx
+#            - bb
+#        header: 
+#          x-my-1:
+#            - val1
+#            - val2
+#        authorization: 
+#          scheme: Basic
+#          parameter: opensesma
+#      proxy:
+#        url: http://192.168.1.1:8080
+#        username: Contoso\admin
+#        password: opensesame
+#      tls:
+#        validateCertificateChain: false
+#        validateCertificateName: false
+outputLocation: C:\Users\ALMAA\OneDrive - Inter-American Development Bank Group\Documents\Biztalk\API Management\CICD APIM\APIM_Automation\templates\ezshare-api
+linked: true
+linkedTemplatesBaseUrl : https://saapimnp.blob.core.windows.net/contapimarm
