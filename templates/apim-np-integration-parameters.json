@@ -6,7 +6,7 @@
       "value": "apim-np-integration"
     },
     "LinkedTemplatesBaseUrl": {
-      "value": "https://sanpapim.blob.core.windows.net/containerapim"
+      "value": "https://saapimnp.blob.core.windows.net/contapimarm"
     }
   }
 }
