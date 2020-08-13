@@ -1,5 +1,5 @@
 version: 0.0.1
-apimServiceName: apim-np-integration
+apimServiceName: apim-np-integrations
 apiVersionSets:
     - id: myAPIVersionSetID
       displayName: swaggerPetstoreVersionSetLinked

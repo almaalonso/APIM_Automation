@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "ApimServiceName": {
-      "value": "apim-np-integration"
+      "value": "apim-np-integrations"
     },
     "LinkedTemplatesBaseUrl": {
       "value": "https://saapimnp.blob.core.windows.net/contapimarm"
