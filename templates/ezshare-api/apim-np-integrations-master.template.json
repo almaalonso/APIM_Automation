@@ -13,6 +13,12 @@
       "metadata": {
         "description": "Base URL of the repository"
       }
+    },
+    "LinkedTemplatesUrlQueryString": {
+      "type": "string",
+      "metadata": {
+        "description": "Query string for the URL of the repository"
+      }
     }
   },
   "resources": [
@@ -20,7 +26,7 @@
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/apim-np-integration-apiVersionSets.template.json')]",
+          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/apim-np-integrations-apiVersionSets.template.json', parameters('LinkedTemplatesUrlQueryString'))]",
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
@@ -38,7 +44,7 @@
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/carterainteligente-name-initial.api.template.json')]",
+          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/apim-np-integrations-products.template.json', parameters('LinkedTemplatesUrlQueryString'))]",
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
@@ -47,18 +53,37 @@
           }
         }
       },
-      "name": "carterainteligente-name-InitialAPITemplate",
+      "name": "productsTemplate",
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2018-01-01",
+      "dependsOn": []
+    },
+    {
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/ezshare-api-initial.api.template.json', parameters('LinkedTemplatesUrlQueryString'))]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "ApimServiceName": {
+            "value": "[parameters('ApimServiceName')]"
+          }
+        }
+      },
+      "name": "ezshare-api-InitialAPITemplate",
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2018-01-01",
       "dependsOn": [
-        "[resourceId('Microsoft.Resources/deployments', 'versionSetTemplate')]"
+        "[resourceId('Microsoft.Resources/deployments', 'versionSetTemplate')]",
+        "[resourceId('Microsoft.Resources/deployments', 'productsTemplate')]"
       ]
     },
     {
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/carterainteligente-name-subsequent.api.template.json')]",
+          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/ezshare-api-subsequent.api.template.json', parameters('LinkedTemplatesUrlQueryString'))]",
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
@@ -67,11 +92,11 @@
           }
         }
       },
-      "name": "carterainteligente-name-SubsequentAPITemplate",
+      "name": "ezshare-api-SubsequentAPITemplate",
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2018-01-01",
       "dependsOn": [
-        "[resourceId('Microsoft.Resources/deployments', 'carterainteligente-name-InitialAPITemplate')]"
+        "[resourceId('Microsoft.Resources/deployments', 'ezshare-api-InitialAPITemplate')]"
       ]
     }
   ]

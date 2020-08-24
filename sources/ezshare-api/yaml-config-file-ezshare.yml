@@ -1,39 +1,40 @@
 version: 0.0.1
-apimServiceName: myAPIMService
+apimServiceName: apim-np-integrations
 apiVersionSets:
-    - id: myAPIVersionSetID
-      displayName: swaggerPetstoreVersionSetLinked
-      description: a description
-      versioningScheme: Query
+    - id: segmentVersionID
+      displayName: Ezshare API
+      description: Ezshare API Descriptio Test
+      versioningScheme: Segment
       versionQueryName: versionQuery
       versionHeaderName: versionHeader
-    - id: secondAPIVersionSetID
-      displayName: secondSet
-      description: another description
+    - id: headerVersionSegment
+      displayName: Ezshare API
+      description: Ezshare API Descriptio Test
       versioningScheme: Header
       versionQueryName: versionQuery
       versionHeaderName: versionHeader
 apis:
-    - name: myAPI
+    - name: ezshare-api
       type: http
-      description: myFirstAPI
-      serviceUrl: http://myApiBackendUrl.com
-      openApiSpec: C:\Users\myUsername\Projects\azure-api-management-devops-example\src\APIM_ARMTemplate\apimtemplate\Creator\ExampleFile\OpenApiSpecs\swaggerPetstore.json
+      description: Public Ezshare API
+      serviceUrl: http://ezshare-api-test.iadb.org
+      openApiSpec: C:\Users\ALMAA\OneDrive - Inter-American Development Bank Group\Documents\Biztalk\API Management\CICD APIM\APIM_Automation\sources\ezshare-api\PublicEzShareAPI.json
       #policy: C:\Users\myUsername\Projects\azure-api-management-devops-example\src\APIM_ARMTemplate\apimtemplate\Creator\ExampleFiles\XMLPolicies\apiPolicyHeaders.xml
-      suffix: conf
+      suffix: ezshare-api
       subscriptionRequired: true
       isCurrent: true
       apiVersion: v1
-      apiVersionDescription: My first version
-      apiVersionSetId: myAPIVersionSetID
+      apiVersionDescription: Version 1
+      apiVersionSetId: segmentVersionID
       apiRevision: 1
-      apiRevisionDescription: My first revision
+      apiRevisionDescription: Revision 1
       #operations:      
       #  addPet:
       #    policy: C:\Users\myUsername\Projects\azure-api-management-devops-example\src\APIM_ARMTemplate\apimtemplate\Creator\ExampleFile\XMLPolicies\operationRateLimit.xml
       #  deletePet:
       #    policy: C:\Users\myUsername\Projects\azure-api-management-devops-example\src\APIM_ARMTemplate\apimtemplate\Creator\ExampleFile\XMLPolicies\operationRateLimit.xml
-      products: starter, platinum
+      products: ezshare
+      #products: starter, platinum
       #authenticationSettings:
       #  oAuth2:
       #      authorizationServerId: myAuthServer
@@ -64,15 +65,15 @@ apis:
       #      body: 
       #        bytes: 512
       #  enableHttpCorrelationHeaders: true
-#products:
-#    - displayName: platinum
-#      description: a test product
-#      terms: some terms
-#      subscriptionRequired: true
-#      approvalRequired: true
-#      subscriptionsLimit: 1
-#      state: notPublished
-#      policy: C:\Users\myUsername\Projects\azure-api-management-devops-example\src\APIM_ARMTemplate\apimtemplate\Creator\ExampleFile\XMLPolicies\productSetBodyBasic.xml
+products:
+    - displayName: ezshare
+      description: ezshare product
+      terms: some terms
+      subscriptionRequired: true
+      approvalRequired: true
+      subscriptionsLimit: 10
+      state: notPublished
+#      policy: C:\Users\ALMAA\OneDrive - Inter-American Development Bank Group\Documents\Biztalk\API Management\CICD APIM\apim-np-automation-dev\sources\ezshare-api\operationRateLimit.xml
 #namedValues:
 #    - displayName: Test
 #      value: Item 1
@@ -128,7 +129,7 @@ apis:
 #      tls:
 #        validateCertificateChain: false
 #        validateCertificateName: false
-outputLocation: C:\Users\myUsername\GeneratedTemplates
-linked: false
-linkedTemplatesBaseUrl : https://mystorageaccount.blob.core.windows.net/mycontainer
+outputLocation: C:\Users\ALMAA\OneDrive - Inter-American Development Bank Group\Documents\Biztalk\API Management\CICD APIM\APIM_Automation\templates\ezshare-api
+linked: true
+linkedTemplatesBaseUrl : https://saapimnp.blob.core.windows.net/contapimarm
 linkedTemplatesUrlQueryString: mockquerystring

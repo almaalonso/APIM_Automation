@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "ApimServiceName": {
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "properties": {
+        "description": "ezshare product",
+        "terms": "some terms",
+        "subscriptionRequired": true,
+        "approvalRequired": true,
+        "subscriptionsLimit": 10,
+        "state": "notPublished",
+        "displayName": "ezshare"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/ezshare')]",
+      "type": "Microsoft.ApiManagement/service/products",
+      "apiVersion": "2019-01-01",
+      "dependsOn": []
+    }
+  ]
+}

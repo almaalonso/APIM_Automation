@@ -9,17 +9,17 @@
   "resources": [
     {
       "properties": {
-        "description": "publicEzshareAPI",
+        "description": "Public Ezshare API",
         "type": "http",
         "apiRevision": "1",
         "apiVersion": "v1",
         "isCurrent": true,
-        "apiRevisionDescription": "My first revision",
-        "apiVersionDescription": "My first version",
-        "apiVersionSetId": "[resourceId('Microsoft.ApiManagement/service/apiVersionSets', parameters('ApimServiceName'), 'ezshareVersionSetID')]",
+        "apiRevisionDescription": "Revision 1",
+        "apiVersionDescription": "Version 1",
+        "apiVersionSetId": "[resourceId('Microsoft.ApiManagement/service/apiVersionSets', parameters('ApimServiceName'), 'segmentVersionID')]",
         "subscriptionRequired": true,
         "displayName": "ezshare-api",
-        "serviceUrl": "http://ezshareBackendUrl.com",
+        "serviceUrl": "http://ezshare-api-test.iadb.org",
         "path": "ezshare-api",
         "protocols": [
           "https"
@@ -32,53 +32,8 @@
       "dependsOn": []
     },
     {
-      "properties": {
-        "value": "<policies>\r\n  <inbound>\r\n    <base />\r\n  </inbound>\r\n  <backend>\r\n    <base />\r\n  </backend>\r\n  <outbound>\r\n    <set-header name=\"X-Powered-By\" exists-action=\"delete\" />\r\n    <set-header name=\"X-AspNet-Version\" exists-action=\"delete\" />\r\n    <base />\r\n  </outbound>\r\n  <on-error>\r\n    <base />\r\n  </on-error>\r\n</policies>",
-        "format": "rawxml"
-      },
-      "name": "[concat(parameters('ApimServiceName'), '/ezshare-api/policy')]",
-      "type": "Microsoft.ApiManagement/service/apis/policies",
-      "apiVersion": "2019-01-01",
-      "dependsOn": [
-        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'ezshare-api')]"
-      ]
-    },
-    {
-      "properties": {
-        "value": "<policies>\r\n  <inbound>\r\n    <rate-limit-by-key calls=\"3\" renewal-period=\"15\" counter-key=\"@(context.Subscription.Id)\" />\r\n    <base />\r\n  </inbound>\r\n  <backend>\r\n    <base />\r\n  </backend>\r\n  <outbound>\r\n    <base />\r\n  </outbound>\r\n  <on-error>\r\n    <base />\r\n  </on-error>\r\n</policies>",
-        "format": "rawxml"
-      },
-      "name": "[concat(parameters('ApimServiceName'), '/ezshare-api/File_Post/policy')]",
-      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
-      "apiVersion": "2019-01-01",
-      "dependsOn": [
-        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'ezshare-api')]"
-      ]
-    },
-    {
-      "properties": {
-        "value": "<policies>\r\n  <inbound>\r\n    <rate-limit-by-key calls=\"3\" renewal-period=\"15\" counter-key=\"@(context.Subscription.Id)\" />\r\n    <base />\r\n  </inbound>\r\n  <backend>\r\n    <base />\r\n  </backend>\r\n  <outbound>\r\n    <base />\r\n  </outbound>\r\n  <on-error>\r\n    <base />\r\n  </on-error>\r\n</policies>",
-        "format": "rawxml"
-      },
-      "name": "[concat(parameters('ApimServiceName'), '/ezshare-api/Folder_Post/policy')]",
-      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
-      "apiVersion": "2019-01-01",
-      "dependsOn": [
-        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'ezshare-api')]"
-      ]
-    },
-    {
       "properties": {},
-      "name": "[concat(parameters('ApimServiceName'), '/starter/ezshare-api')]",
-      "type": "Microsoft.ApiManagement/service/products/apis",
-      "apiVersion": "2019-01-01",
-      "dependsOn": [
-        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'ezshare-api')]"
-      ]
-    },
-    {
-      "properties": {},
-      "name": "[concat(parameters('ApimServiceName'), '/ezshare-product/ezshare-api')]",
+      "name": "[concat(parameters('ApimServiceName'), '/ezshare/ezshare-api')]",
       "type": "Microsoft.ApiManagement/service/products/apis",
       "apiVersion": "2019-01-01",
       "dependsOn": [

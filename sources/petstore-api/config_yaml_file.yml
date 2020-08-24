@@ -1,5 +1,5 @@
 version: 0.0.1
-apimServiceName: apim-np-integration
+apimServiceName: apim-np-integrations
 apiVersionSets:
     - id: myAPIVersionSetID
       displayName: swaggerPetstoreVersionSetLinked
@@ -18,8 +18,8 @@ apis:
       type: http
       description: myFirstAPI
       serviceUrl: http://myApiBackendUrl.com
-      openApiSpec: C:\Users\ALMAA\Documents\Biztalk\API Management\Biztalk Solutions APIM\APIM_Automation\sources\petstore-api\swaggerPetstore.json
-      policy: C:\Users\ALMAA\Documents\Biztalk\API Management\Biztalk Solutions APIM\APIM_Automation\sources\petstore-api\apiPolicyHeaders.xml
+      openApiSpec: C:\Users\ALMAA\OneDrive - Inter-American Development Bank Group\Documents\Biztalk\API Management\CICD APIM\APIM_Automation\sources\petstore-api\swaggerPetstore.json
+      policy: C:\Users\ALMAA\OneDrive - Inter-American Development Bank Group\Documents\Biztalk\API Management\CICD APIM\APIM_Automation\sources\petstore-api\apiPolicyHeaders.xml
       suffix: petstore-api
       subscriptionRequired: true
       isCurrent: true
@@ -30,9 +30,9 @@ apis:
       apiRevisionDescription: My first revision
       operations:
         addPet:
-          policy: C:\Users\ALMAA\Documents\Biztalk\API Management\Biztalk Solutions APIM\APIM_Automation\sources\petstore-api\operationRateLimit.xml
+          policy: C:\Users\ALMAA\OneDrive - Inter-American Development Bank Group\Documents\Biztalk\API Management\CICD APIM\APIM_Automation\sources\petstore-api\operationRateLimit.xml
         deletePet:
-          policy: C:\Users\ALMAA\Documents\Biztalk\API Management\Biztalk Solutions APIM\APIM_Automation\sources\petstore-api\operationRateLimit.xml
+          policy: C:\Users\ALMAA\OneDrive - Inter-American Development Bank Group\Documents\Biztalk\API Management\CICD APIM\APIM_Automation\sources\petstore-api\operationRateLimit.xml
       products: starter, platinum
 products:
     - displayName: platinum
@@ -42,7 +42,7 @@ products:
       approvalRequired: true
       subscriptionsLimit: 1
       state: notPublished
-      policy: C:\Users\ALMAA\Documents\Biztalk\API Management\Biztalk Solutions APIM\APIM_Automation\sources\petstore-api\productSetBodyBasic.xml
+      policy: C:\Users\ALMAA\OneDrive - Inter-American Development Bank Group\Documents\Biztalk\API Management\CICD APIM\APIM_Automation\sources\petstore-api\productSetBodyBasic.xml
 backends:
     - title: myBackend
       description: description5308
@@ -67,6 +67,7 @@ backends:
       tls:
         validateCertificateChain: false
         validateCertificateName: false
-outputLocation: C:\Users\ALMAA\Documents\Biztalk\API Management\Biztalk Solutions APIM\APIM_Automation\sources\templates\petstore-api
+outputLocation: C:\Users\ALMAA\OneDrive - Inter-American Development Bank Group\Documents\Biztalk\API Management\CICD APIM\APIM_Automation\templates\petstore-api
 linked: true
-linkedTemplatesBaseUrl : https://sanpapim.blob.core.windows.net/containerapim
+linkedTemplatesBaseUrl : https://saapimnp.blob.core.windows.net/contapimarm
+linkedTemplatesUrlQueryString: mockquerystring

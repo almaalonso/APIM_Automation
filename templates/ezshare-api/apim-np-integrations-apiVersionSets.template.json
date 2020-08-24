@@ -9,26 +9,26 @@
   "resources": [
     {
       "properties": {
-        "displayName": "swaggerCarteraVersionSetLinked",
-        "description": "a description",
+        "displayName": "Ezshare API",
+        "description": "Ezshare API Descriptio Test",
         "versionQueryName": "versionQuery",
         "versionHeaderName": "versionHeader",
-        "versioningScheme": "Query"
+        "versioningScheme": "Segment"
       },
-      "name": "[concat(parameters('ApimServiceName'), '/carterainteligente-api')]",
+      "name": "[concat(parameters('ApimServiceName'), '/segmentVersionID')]",
       "type": "Microsoft.ApiManagement/service/apiVersionSets",
       "apiVersion": "2019-01-01",
       "dependsOn": []
     },
     {
       "properties": {
-        "displayName": "Cartera Inteligente API",
-        "description": "Cartera Inteligente description",
+        "displayName": "Ezshare API",
+        "description": "Ezshare API Descriptio Test",
         "versionQueryName": "versionQuery",
         "versionHeaderName": "versionHeader",
-        "versioningScheme": "Segment"
+        "versioningScheme": "Header"
       },
-      "name": "[concat(parameters('ApimServiceName'), '/carteraInteligenteVersionSetID')]",
+      "name": "[concat(parameters('ApimServiceName'), '/headerVersionSegment')]",
       "type": "Microsoft.ApiManagement/service/apiVersionSets",
       "apiVersion": "2019-01-01",
       "dependsOn": []
