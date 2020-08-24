@@ -13,6 +13,12 @@
       "metadata": {
         "description": "Base URL of the repository"
       }
+    },
+    "LinkedTemplatesUrlQueryString":{
+      "type": "string",
+      "metadata": {
+        "description": "Base URL of the repository"
+      }
     }
   },
   "resources": [
@@ -30,10 +36,13 @@
           },
           "LinkedTemplatesBaseUrl":{
             "value": "[concat(parameters('LinkedTemplatesBaseUrl'), '/ezshare-api')]"
+          },
+          "LinkedTemplatesUrlQueryString":{
+            "value": "[parameters('LinkedTemplatesUrlQueryString')]"
           }
         }
       },
-      "name": "PetStore-test",
+      "name": "Ezshare-test-Deployment",
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2019-10-01",
       "dependsOn": []
