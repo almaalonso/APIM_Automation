@@ -1,5 +1,5 @@
 version: 0.0.1
-apimServiceName: apim-np-integrations
+apimServiceName: apim-np-integrationss
 apiVersionSets:
     - id: segmentVersionID
       displayName: Ezshare API
