@@ -7,6 +7,9 @@
     },
     "LinkedTemplatesBaseUrl": {
       "value": "https://saapimnp.blob.core.windows.net/contapimarm"
+    },
+    "LinkedTemplatesUrlQueryString": {
+      "value": "mockquerystring"
     }
   }
 }

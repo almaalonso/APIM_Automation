@@ -131,3 +131,4 @@ apis:
 outputLocation: C:\Users\myUsername\GeneratedTemplates
 linked: false
 linkedTemplatesBaseUrl : https://mystorageaccount.blob.core.windows.net/mycontainer
+linkedTemplatesUrlQueryString: mockquerystring

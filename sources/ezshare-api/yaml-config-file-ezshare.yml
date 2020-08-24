@@ -132,3 +132,4 @@ products:
 outputLocation: C:\Users\ALMAA\OneDrive - Inter-American Development Bank Group\Documents\Biztalk\API Management\CICD APIM\APIM_Automation\templates\ezshare-api
 linked: true
 linkedTemplatesBaseUrl : https://saapimnp.blob.core.windows.net/contapimarm
+linkedTemplatesUrlQueryString: mockquerystring
