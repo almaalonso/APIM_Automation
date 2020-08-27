@@ -19,6 +19,12 @@
       "metadata": {
         "description": "Base URL of the repository"
       }
+    },
+    "serviceUrl": {
+      "type": "object",
+      "metadata": {
+        "description": "Service url for each Api"
+      }
     }
   },
   "resources": [
@@ -39,6 +45,9 @@
           },
           "LinkedTemplatesUrlQueryString":{
             "value": "[parameters('LinkedTemplatesUrlQueryString')]"
+          },
+          "serviceUrl":{
+            "value": "[parameters('serviceUrl')]"
           }
         }
       },
