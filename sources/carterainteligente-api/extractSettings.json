@@ -4,7 +4,7 @@
     "resourceGroup": "rg-np-integrations",
     "fileFolder": "C:\\Users\\ALMAA\\OneDrive - Inter-American Development Bank Group\\Documents\\Biztalk\\API Management\\CICD APIM\\APIM_Automation\\templates\\carterainteligente-api",
     "apiName": "cartera-inteligente-version-segment",
-    "paramServiceUrl" : "true",
+    "paramServiceUrl" : "false",
     "linkedTemplatesBaseUrl": "https://saapimnp.blob.core.windows.net/contapimarm",
     "linkedTemplatesUrlQueryString": "mockquerystring"
 }
