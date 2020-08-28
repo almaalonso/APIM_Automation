@@ -10,11 +10,6 @@
     },
     "LinkedTemplatesUrlQueryString":{
       "value": "?mockquerystring"
-    },
-    "serviceUrl": {
-      "value": {
-        "carterainteligenteversionsegment": null
-      }
     }
   }
 }
