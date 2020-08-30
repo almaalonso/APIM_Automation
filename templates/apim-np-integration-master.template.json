@@ -26,7 +26,7 @@
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/ezshare-api/apim-np-integrationss-master.template.json')]",
+          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/petstore-api/apim-np-integrationss-master.template.json')]",
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
@@ -35,7 +35,7 @@
             "value": "[parameters('ApimServiceName')]"
           },
           "LinkedTemplatesBaseUrl":{
-            "value": "[concat(parameters('LinkedTemplatesBaseUrl'), '/ezshare-api')]"
+            "value": "[concat(parameters('LinkedTemplatesBaseUrl'), '/petstore-api')]"
           },
           "LinkedTemplatesUrlQueryString":{
             "value": "[parameters('LinkedTemplatesUrlQueryString')]"
